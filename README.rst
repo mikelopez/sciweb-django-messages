@@ -1,55 +1,45 @@
+django sciweb pm
+===========================================
 Private messages between users in django
 
 ---
-- Add <pre>django_pm.context_processors.get_args</pre> to TEMPLATE_CONTEXT_PROCESSORS in your settings
+- Add ``django_pm.context_processors.get_args`` to TEMPLATE_CONTEXT_PROCESSORS in your settings
 
-- Add <pre>django_pm</pre> to INSTALLED_APPS in settings
-
-
-<h2>Template Tags Usage</h2>
-<b>Inbox Pages</b>
-<pre>
-    <!-- your markup html inbox template -->
-    {{ user|get_inbox_count }} Message(s)
-
-    <!-- get the messages in the inbox -->
-    {% for i in user|get_inbox_messages %}
-      <tr>
-        <td><a href="{% url get_message %}?message={{i.id}}">From {{i.sender}}</a></td>
-        <td>Sent at {{i.date_sent}}</td>
-      </tr>
-    {% endfor %}
-</pre>
+- Add ``django_pm`` to INSTALLED_APPS in settings
 
 
-<b>Inbox Page</b>
-<pre>
-<div class="container">
-      <h2>Inbox</h2><hr />
-      {{ user|get_inbox_count }} Message(s)
+Template Tags Usage
+===================
 
-      <hr />
-      <table class="table-bordered table">
-      {% for i in user|get_inbox_messages %}
-      <tr class="{% if i.is_new %}alert alert-success{% else %}{% endif %}">
-        <td><a href="{% url get_message %}?message={{i.id}}">
-          {% if i.parent_msg %}<b>RE: </b>{% endif %}From {{i.sender}}</a></td>
-        <td>Sent at {{i.date_sent}}</td>
-      </tr>
-          
-      {% endfor %}
-    </table>
+Inbox Page::
 
-    </div>
-</pre>
-
-<b>Posting a Message - Form</b> generate_recipient will generate any required form elements. send_to_user is the user that will
-be receiving the message. This variable name is whatever the user name is
-<pre>
+    <pre>
     <div class="container">
+          <h2>Inbox</h2><hr />
+          {{ user|get_inbox_count }} Message(s)
+
+          <hr />
+          <table class="table-bordered table">
+          {% for i in user|get_inbox_messages %}
+          <tr class="{% if i.is_new %}alert alert-success{% else %}{% endif %}">
+            <td><a href="{% url get_message %}?message={{i.id}}">
+              {% if i.parent_msg %}<b>RE: </b>{% endif %}From {{i.sender}}</a></td>
+            <td>Sent at {{i.date_sent}}</td>
+          </tr>
+              
+          {% endfor %}
+        </table>
+
+        </div>
+    </pre>
+
+Posting a Message
+=================
+Form generate_recipient will generate any required form elements. send_to_user is the user that will
+be receiving the message. This variable name is whatever the user name is::
+
       {% if not send_to_user %}
-        <h2>You must select a user to send a message to</h2>
-        <hr />
+     
         {% for i in userlist %}
           <a href="?user={{i.id}}">{{ i }}</a><br />
         {% endfor %}
@@ -66,12 +56,14 @@ be receiving the message. This variable name is whatever the user name is
       {% endif %}
     </div>
 
-</pre>
 
 
 
-<b>Message View Page</b>
-<pre>
+Message View Page
+===================
+Use the following to help build the view message page
+::
+
     <!-- set the message from the template tag return and play with it -->
     <div class="container">
       <h2>Last Messag {{message.id}} From {{sender}}</h2>
@@ -105,4 +97,4 @@ be receiving the message. This variable name is whatever the user name is
         {% endif %}
       </div>
     </div>
-</pre>
+
