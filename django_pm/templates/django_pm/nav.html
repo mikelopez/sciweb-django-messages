@@ -1,0 +1,36 @@
+            <div id="navbar-example" class="navbar navbar-static navbar-inverse navbar-fixed-top">
+              <div class="navbar-inner">
+                <div class="container">
+                  <a class="brand" href="#">Private Messages</a>
+                  <ul class="nav" role="navigation">
+                    <li class="dropdown">
+                      <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+                        Messages<b class="caret"></b>
+                      </a>
+                      <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                        <li><a href="{% url inbox %}">Inbox</a></li>
+                        <li><a href="{% url outbox %}">Outbox</a></li>
+                        
+                        <li class="divider"></li>
+                        <li><a href="{% url post_message %}">Send New Message</a></li>
+                        
+                        
+                      </ul>
+                    </li>
+                    
+                  </ul>
+                  <ul class="nav pull-right">
+                    <li id="fat-menu" class="dropdown">
+                      <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">
+                        Logout<b class="caret"></b>
+                      </a>
+                      <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
+                        <li>{{user.username}}</li>
+                        <li class="divider"></li>
+                        <li><a tabindex="-1" href="/logout">Logout</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div> <!-- /navbar-example -->

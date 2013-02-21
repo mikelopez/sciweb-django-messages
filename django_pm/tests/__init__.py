@@ -1,0 +1,1 @@
+from django_pm.tests.test_urls import TestURLS

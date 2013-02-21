@@ -1,0 +1,5 @@
+include README.md
+include MANIFEST.in
+recursive-include django_pm/templates *
+recursive-include django_pm/features *
+recursive-include django_pm/templatetags
