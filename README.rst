@@ -2,10 +2,9 @@ django sciweb pm
 ===========================================
 Private messages between users in django
 
----
-- Add ``django_pm.context_processors.get_args`` to TEMPLATE_CONTEXT_PROCESSORS in your settings
+* Add ``django_pm.context_processors.get_args`` to TEMPLATE_CONTEXT_PROCESSORS in your settings
 
-- Add ``django_pm`` to INSTALLED_APPS in settings
+* Add ``django_pm`` to INSTALLED_APPS in settings
 
 
 Template Tags Usage
