@@ -1,8 +1,11 @@
 """
-This file demonstrates writing tests using the unittest module. These will pass
-when you run "manage.py test".
-
-Replace this with more appropriate tests for your application.
+Author: Marcos Lopez
+Unit Tests to test the flow of messages
+- Sending messages
+- Reading inbox
+- Reading messages
+- Replying to messages
+- Basic rules for message privacy
 """
 
 from django.test import TestCase, Client
