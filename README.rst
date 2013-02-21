@@ -13,7 +13,7 @@ Template Tags Usage
 
 Inbox Page::
 
-    <pre>
+
     <div class="container">
           <h2>Inbox</h2><hr />
           {{ user|get_inbox_count }} Message(s)
@@ -30,7 +30,7 @@ Inbox Page::
           {% endfor %}
         </table>
 
-        </div>
+    </div>
 
 
 Posting a Message
