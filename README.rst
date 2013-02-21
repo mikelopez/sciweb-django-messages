@@ -6,6 +6,7 @@ Private messages between users in django
 
 * Add ``django_pm`` to INSTALLED_APPS in settings
 
+* Add ``url(r'^messages/', include('django_pm.urls')),`` to your projects urls.py file
 
 Template Tags Usage
 ===================
