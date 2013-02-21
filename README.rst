@@ -31,7 +31,7 @@ Inbox Page::
         </table>
 
         </div>
-    </pre>
+
 
 Posting a Message
 =================
@@ -39,7 +39,6 @@ Form generate_recipient will generate any required form elements. send_to_user i
 be receiving the message. This variable name is whatever the user name is::
 
       {% if not send_to_user %}
-     
         {% for i in userlist %}
           <a href="?user={{i.id}}">{{ i }}</a><br />
         {% endfor %}
@@ -54,7 +53,7 @@ be receiving the message. This variable name is whatever the user name is::
           <input type="submit" value="Send Message" class="btn btn-primary btn-large" />
         </form>
       {% endif %}
-    </div>
+
 
 
 
