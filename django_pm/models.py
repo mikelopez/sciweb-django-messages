@@ -90,6 +90,13 @@ class Message(models.Model):
     self.save()
     return True
 
+  def set_as_read_noreturn(self):
+    """
+    Set the message as read by the user
+    """
+    self.read_date = datetime.now()
+    self.save()
+
   def set_as_deleted(self):
     """
     Set the message as deleted (but dont delete until permanently deleted)

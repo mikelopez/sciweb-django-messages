@@ -76,7 +76,7 @@ def post_message(request):
         message_object = None
         if send_msg.is_valid():
             message_object = send_msg.save()  
-        return HttpResponseRedirect(reverse('inbox'))
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
     try:
         send_to_user_object = User.objects.get(pk=int(request.GET.get('user', None)))
