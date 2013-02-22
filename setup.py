@@ -5,7 +5,7 @@ setup(
     name='django_pm',
     version='0.1',
     description="Django app",
-    long_description=open('README.md', 'r').read(),
+    long_description=open('README.rst', 'r').read(),
     keywords='',
     author='',
     author_email='',

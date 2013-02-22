@@ -48,7 +48,7 @@ be receiving the message. This variable name is whatever the user name is::
         <hr />
         <form action="{% url post_message %}" method="POST">{% csrf_token %}
           {{send_to_user|generate_recipient|safe}}
-          {{form}}
+          {{send_message_form}}
           <br />
           <input type="submit" value="Send Message" class="btn btn-primary btn-large" />
         </form>
@@ -89,7 +89,7 @@ Use the following to help build the view message page
           <form action="{% url post_message %}" method="POST">{% csrf_token %}
           {{sender|generate_recipient|safe}}
           {{message|generate_parent|safe}}
-          {{form}}
+          {{send_message_form}}
           <br />
           <input type="submit" class="btn btn-primary" value="Reply" />
         </form>
