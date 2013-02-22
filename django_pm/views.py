@@ -27,7 +27,6 @@ PROJECT_ROOTDIR = getattr(settings, 'PROJECT_ROOTDIR', None)
 STATIC_BOOTSTRAP = getattr(settings, 'STATIC_BOOTSTRAP', None)
 MEDIA_URL = getattr(settings, 'MEDIA_URL', None)
 
-import ipaddr
 import datetime
 
 import logging
