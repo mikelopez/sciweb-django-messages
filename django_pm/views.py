@@ -83,8 +83,7 @@ def post_message(request):
     except (User.DoesNotExist, TypeError):
         send_to_user_object = None
         log.debug('User id is not valid')
-        return render(request, 'django_pm/post_message.html', \
-            {'userlist': User.objects.filter(is_superuser=False, is_staff=False, is_active=True)})
+        raise Http404
     return render(request, 'django_pm/post_message.html')
 
 @login_required
