@@ -71,7 +71,7 @@
         <hr />
         <form action="{% url post_message %}" method="POST">{% csrf_token %}
           {{send_to_user|generate_recipient|safe}}
-          {{form}}
+          {{send_message_form}}
           <br />
           <input type="submit" value="Send Message" class="btn btn-primary btn-large" />
         </form>

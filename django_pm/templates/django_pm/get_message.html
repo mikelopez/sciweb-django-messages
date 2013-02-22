@@ -86,7 +86,7 @@
           <form action="{% url post_message %}" method="POST">{% csrf_token %}
           {{sender|generate_recipient|safe}}
           {{message|generate_parent|safe}}
-          {{form}}
+          {{send_message_form}}
           <br />
           <input type="submit" class="btn btn-primary" value="Reply" />
         </form>

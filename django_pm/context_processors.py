@@ -42,6 +42,6 @@ def get_args(request):
     
 
     response_data  = {'message_id': request.GET.get('message', None), \
-        'form': SendMessageForm(), 'send_to_user': request.GET.get('user', None), \
+        'send_message_form': SendMessageForm(), 'send_to_user': request.GET.get('user', None), \
         'message': message, 'sender': sender, 'recipient': recipient}
     return Context(response_data)
