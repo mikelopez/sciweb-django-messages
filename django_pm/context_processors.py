@@ -37,7 +37,7 @@ def get_args(request):
                     m.read_date = datetime.now()
                     m.save()
 
-        except Message.DoesNotExist:
+        except (Message.DoesNotExist, ValueError):
             m = None
     
 
