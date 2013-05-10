@@ -8,6 +8,19 @@ Private messages between users in django
 
 * Add ``url(r'^messages/', include('django_pm.urls')),`` to your projects urls.py file
 
+
+
+Using Your own Templates
+=======================
+Create a folder named django_pm in your templates directory, and use the following filenames to override and use your own custom templates in place of the default templates
+
+* inbox.html
+* outbox.html
+* post_message.html
+* get_message.html
+
+
+
 Template Tags Usage
 ===================
 
