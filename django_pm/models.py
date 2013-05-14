@@ -67,7 +67,7 @@ class Message(models.Model):
   parent_msg = models.ForeignKey('self', null=True, blank=True)
   read_date = models.DateTimeField(null=True, blank=True)
   deleted_date = models.DateTimeField(null=True, blank=True)
-  text = models.TextField()
+  text = models.TextField(verbose_name=('Message'))
   date_sent = models.DateTimeField(null=True, blank=True, default=datetime.now())
   objects = MessageManager()
 
