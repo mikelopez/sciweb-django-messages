@@ -3,7 +3,7 @@ import sys, os
 
 setup(
     name='django_pm',
-    version='0.1',
+    version='1.1',
     description="Django app",
     long_description=open('README.rst', 'r').read(),
     keywords='',
