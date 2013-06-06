@@ -16,6 +16,13 @@ def get_inbox_count(user):
     return len(Message.objects.get_inbox_messages(user))
 
 @register.filter
+def get_outbox_count(user):
+    """
+    Get the outbox messages count
+    """
+    return len(Message.objects.get_outbox_messages(user))
+
+@register.filter
 def generate_recipient(send_to):
     """
     Read some html data with RECIPIENT placeholder text 

@@ -39,15 +39,15 @@ class MessageManager(models.Manager):
 
   def get_inbox_messages(self, user):
     """
-    get my messages (user)
+    get my messages (user) by most recent
     """
     return Message.objects.filter(recipient=user, deleted_date__isnull=True).order_by('-id')
 
   def get_outbox_messages(self, user):
     """
-    Get sent outbox messages 
+    Get sent outbox messages by most recent
     """
-    return Message.objects.filter(sender=user, deleted_date__isnull=True)
+    return Message.objects.filter(sender=user, deleted_date__isnull=True).order_by('-id')
 
   def get_parent_messages(self):
     """
