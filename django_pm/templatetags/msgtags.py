@@ -64,4 +64,9 @@ def get_inbox_messages(user):
     """
     return Message.objects.get_inbox_messages(user)
 
-
+@register.filter
+def get_outbox_messages(user):
+    """
+    Get the outbox messages for the user specified
+    """
+    return Message.objects.get_outbox_messages(user)
