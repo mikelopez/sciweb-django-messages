@@ -37,6 +37,12 @@ class MessageManager(models.Manager):
     """
     return len(Message.objects.filter(recipient=user, deleted_date__isnull=True))
 
+  def get_outbox_messages_count(self, user):
+    """
+    Get the total outbox messages - exclude deleted 
+    """
+    return len(Message.objects.filter(sender=user, deleted_date__isnull=True))
+
   def get_inbox_messages(self, user):
     """
     get my messages (user) by most recent
