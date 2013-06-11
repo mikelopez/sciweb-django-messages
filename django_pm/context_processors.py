@@ -34,7 +34,7 @@ def get_args(request):
                 recipient = m.recipient
                 # only recipient can flag it as read
                 if m.is_new():
-                    if m.recipient.id = request.user.id:
+                    if m.recipient.id == request.user.id:
                         m.read_date = datetime.now()
                         m.save()
 
