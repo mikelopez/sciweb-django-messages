@@ -84,7 +84,6 @@ Message View Page
 Use the following to help build the view message page
 
 .. code-block:: html
-::
 
     <!-- set the message from the template tag return and play with it -->
     <div class="container">
@@ -127,7 +126,7 @@ Connect the post_save
 Here, you can connect the post save to do anything post save
 of the Messages() object
 
-.. code-block:: html
+.. code-block:: python
 
   def send_pm_notification(sender, instance, created, **kwargs):
     """ Send a notification email when someone receives a message 
