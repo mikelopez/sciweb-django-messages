@@ -32,10 +32,11 @@ def get_args(request):
                 message = m
                 sender = m.sender
                 recipient = m.recipient
-                # flag it as read
+                # only recipient can flag it as read
                 if m.is_new():
-                    m.read_date = datetime.now()
-                    m.save()
+                    if m.recipient.id = request.user.id:
+                        m.read_date = datetime.now()
+                        m.save()
 
         except (Message.DoesNotExist, ValueError):
             m = None
