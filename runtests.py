@@ -9,6 +9,17 @@ from nose.plugins.plugintest import run_buffered as run
 if not settings.configured:
     # Configure your project here
     print "Configuring settings..."
+    DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3', 
+                'NAME': '%s/db_data.sql'%os.path.dirname(__file__),
+                'USER': '',
+                'PASSWORD': '',
+                'HOST': '',
+                'PORT': '',
+            }
+    }
+    
     settings.configure(
         INSTALLED_APPS=[
             'django.contrib.auth',
