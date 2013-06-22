@@ -115,9 +115,8 @@ class Message(models.Model):
     """
     returns if the user is in sent/received thread 
     """
-    if not user.id == self.recipient.id:
-      if not user.id == self.sender.id:
-        return False
+    if not user.id in [self.recipient_id, self.sender_id]:
+      return False
     return True
 
   def can_reply(self, user):
